@@ -7,18 +7,22 @@ function App() {
     // return ( <div className="App">
 
     // </div>
-    let likes=0;
-
+    const [likes, setLikes]=useState(0);
+    const[value,setValue]=useState('Текст в инпуте');
     function Increment(){
-        likes+=1;
-        console.log(likes);
+        setLikes(likes+1);
+    }
+    function Decrement(){
+        setLikes(likes-1);
     }
 
     return (
     <div className='app'>
         <h3>{likes}</h3>
+        <h3>{value}</h3>
+        <input type="text" value={value} onChange={event=>setValue(event.target.value)}/>
         <button onClick={Increment}>Increment</button>
-        <button onClick={()=>likes-=1}>Decrement</button>
+        <button onClick={Decrement}>Decrement</button>
     </div>
     );
 }
