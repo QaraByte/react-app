@@ -1,4 +1,8 @@
 import React, {useState} from 'react';
+import ClassCounter from './Components/ClassCounter';
+import Counter from './Components/Counter';
+import PostItem from './Components/PostItem';
+import './styles/app.css'
 
 function App() {
     // const [count,setCount]=useState(6)
@@ -9,20 +13,14 @@ function App() {
     // </div>
     const [likes, setLikes]=useState(0);
     const[value,setValue]=useState('Текст в инпуте');
-    function Increment(){
-        setLikes(likes+1);
-    }
-    function Decrement(){
-        setLikes(likes-1);
-    }
+    
 
     return (
     <div className='app'>
-        <h3>{likes}</h3>
-        <h3>{value}</h3>
-        <input type="text" value={value} onChange={event=>setValue(event.target.value)}/>
-        <button onClick={Increment}>Increment</button>
-        <button onClick={Decrement}>Decrement</button>
+       <PostItem/>
+       <PostItem/>
+       <PostItem/>
+       <PostItem/>
     </div>
     );
 }
